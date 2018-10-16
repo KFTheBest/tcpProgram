@@ -25,9 +25,10 @@ void readFile(const char* readFile) {
 			if (type == 0) {
 				translateZero(infile);
 			}
-			else {
+			else if (type ==1) {
 				translateOne(infile);
 			}
+			else { printf("Hi \n"); }
 		}
 	}
 	
@@ -48,10 +49,12 @@ int numsReadIn(FILE* infile) {
 }
 
 int translateZero(FILE* infile) {
-	unsigned char type;
-	int byteA = fread(&type, sizeof(type), 1, infile); //reading first byte
-	int byteB = fread(&type, sizeof(type), 1, infile); //reading second byte
-	byteA = byteA >> 8;
+	unsigned char typeA;
+	unsigned char typeB;
+	int byteARead = fread(&typeA, sizeof(typeA), 1, infile); //reading first byte
+	int byteBRead = fread(&typeB, sizeof(typeB), 1, infile); //reading second byte
+	int byteA = typeA >> 8;
+	int byteB = typeB;
 	byteA = byteA && byteB;
 	printf("%i", byteA);
 	printf("\n");
@@ -60,10 +63,10 @@ int translateZero(FILE* infile) {
 }
 int translateOne(FILE* infile) {
 	unsigned char type;
-	int byte = fread(&type, sizeof(type), 1, infile); //reading first byte
-	byte = byte - 48;
-	printf("%i", byte);
+	int byteRead = fread(&type, sizeof(type), 1, infile); //reading first byte
+	type = type - 48;
+	printf("%i", type);
 	printf("\n");
-	return byte;
+	return (int)type;
 }
 
