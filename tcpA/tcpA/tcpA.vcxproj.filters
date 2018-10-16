@@ -18,5 +18,11 @@
     <ClCompile Include="Main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="serverFile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clientFile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

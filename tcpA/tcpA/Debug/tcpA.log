@@ -1,2 +1,7 @@
-﻿  Main.c
+﻿  serverFile.c
+c1 : fatal error C1083: Cannot open source file: 'serverFile.c': No such file or directory
+  Main.c
 c1 : fatal error C1083: Cannot open source file: 'Main.c': No such file or directory
+  clientFile.c
+c1 : fatal error C1083: Cannot open source file: 'clientFile.c': No such file or directory
+  Generating Code...
