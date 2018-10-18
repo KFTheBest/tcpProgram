@@ -16,9 +16,13 @@
 #define ECHO_PORT (2002)
 #define MAX_LINE (1000)
 #define PORT (4444)
+# define DATAZERO 0
+#define DATAONE 1
+
 
 //Define struct as how it should be received from client
 struct myFile {
+
 	unsigned char file*;
 	unsigned char* file_name;
 }myFile;

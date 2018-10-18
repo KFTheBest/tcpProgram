@@ -1,7 +1,5 @@
 #include "tcpServerHelp.h"
 
-
-
 ssize_t readData(int sockd, void *vptr, size_t maxlen) {
 	ssize_t n;
 	ssize_t rc;
@@ -28,7 +26,6 @@ ssize_t readData(int sockd, void *vptr, size_t maxlen) {
 	return n;
 }
 
-
 ssize_t writeBack(int sockd, const void *vptr, size_t n) {
 	ssize_t  nleft;
 	ssize_t     nwritten;
@@ -50,3 +47,5 @@ ssize_t writeBack(int sockd, const void *vptr, size_t n) {
 bool endofLine(unsigned chr) { return (int)chr == 0 || (int)chr == 1; }
 
 bool detectNoNums(unsigned chr) { return chr == ","; }
+
+bool getDataType(unsigned char chr) { return chr == DATAZERO || chr == DATAONE; }
