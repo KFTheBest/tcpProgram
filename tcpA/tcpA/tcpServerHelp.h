@@ -2,11 +2,7 @@
 #define PG_SOCK_HELP
 
 
-/*#include <unistd.h>             /*  for ssize_t data type  */
-#include <sys/socket.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <unistd.h>             /*  for ssize_t data type  */
 
 #define LISTENQ        (1024)   /*  Backlog for listen()   */
 

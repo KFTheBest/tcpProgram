@@ -1,4 +1,7 @@
 #include "tcpServerHelp.h"
+#include <sys/socket.h>
+#include <unistd.h>
+#include <errno.h>
 
 
 /*  Read a line from a socket  */
@@ -57,9 +60,3 @@ ssize_t Writeline(int sockd, const void *vptr, size_t n) {
 
 	return n;
 }
-
-bool endofLine(unsigned chr) { return (int)chr == 0 || (int)chr == 1; }
-
-bool detectNoNums(unsigned chr) { return chr == ","; }
-
-bool getDataType(unsigned char chr) { return chr == DATAZERO || chr == DATAONE; }
