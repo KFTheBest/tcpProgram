@@ -1,6 +1,8 @@
 #include "tcpServerHelp.h"
 
-ssize_t readLine(int sockd, void *vptr, size_t maxlen) {
+
+
+ssize_t readData(int sockd, void *vptr, size_t maxlen) {
 	ssize_t n;
 	ssize_t rc;
 	char c;
@@ -27,7 +29,7 @@ ssize_t readLine(int sockd, void *vptr, size_t maxlen) {
 }
 
 
-ssize_t writeLine(int sockd, const void *vptr, size_t n) {
+ssize_t writeBack(int sockd, const void *vptr, size_t n) {
 	ssize_t  nleft;
 	ssize_t     nwritten;
 	const char *buffer;
@@ -44,3 +46,7 @@ ssize_t writeLine(int sockd, const void *vptr, size_t n) {
 	}
 	return n;
 }
+
+bool endofLine(unsigned chr) { return (int)chr == 0 || (int)chr == 1; }
+
+bool detectNoNums(unsigned chr) { return chr == ","; }

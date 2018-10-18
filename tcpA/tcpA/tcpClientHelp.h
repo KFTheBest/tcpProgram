@@ -12,8 +12,10 @@
 #include <string.h>
 #include <stdio.h>
 
+extern int errno;
+
 int ParseCmdLine(int argc, char *argv[], char **szAddress, char **szPort);
-ssize_t readLine(int fd, void *vptr, size_t maxlen);
-ssize_t writeLine(int fc, const void *vptr, size_t maxlen);
+ssize_t readData(int fd, void *vptr, size_t maxlen);
+ssize_t writeBack(int fc, const void *vptr, size_t maxlen);
 
 #endif 

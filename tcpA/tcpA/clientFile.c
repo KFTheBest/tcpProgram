@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 	servaddr.sin_port = htons(port);
 
 	if (inet_aton(szAddress, &servaddr.sin_addr) <= 0) {
-		printf("ECHOCLNT: Invalid remote IP address.\n");
+		printf("Invalid IP address.\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -38,8 +38,8 @@ int main(int argc, char *argv[]) {
 	printf("Enter the string to echo: ");
 	fgets(buffer, MAX_LINE, stdin);
 
-	Writeline(conn_s, buffer, strlen(buffer));
-	Readline(conn_s, buffer, MAX_LINE - 1);
+	writeBack(conn_s, buffer, strlen(buffer));
+	readData(conn_s, buffer, MAX_LINE - 1);
 
 	printf("Echo response: %s\n", buffer);
 
