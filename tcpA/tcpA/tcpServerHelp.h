@@ -7,8 +7,11 @@
 #include <unistd.h>      
 #include <stdlib.h>
 #include <stdio.h>
+#include <errno.h>   
 
-#define LISTENQ (1024)  
+#define LISTENQ (1024) 
+#define ECHO_PORT (2002)
+#define MAX_LINE (1000)
 
 
 ssize_t Readline(int fd, void *vptr, size_t maxlen);

@@ -1,17 +1,7 @@
-#include <stdio.h>
-#include <stdbool.h>
+#include "convertData.h"
 
-const short TYPE_SIZE = 1;
-int getType(FILE*);
-bool isEndofLine(unsigned);
-void readFile(const char*);
-int numsReadIn(FILE*);
-int translateZero(FILE*);
-int translateOne(FILE*);
+bool isEndofLine(unsigned c) { return (int)c == 0 || (int)c == 1; }
 
-bool isEndofLine(unsigned c) {
-	return (int)c == 0 || (int)c == 1;
-}
 void readFile(const char* readFile) {
 	FILE* infile = fopen(readFile, "rb");
 	if (infile != NULL) {
@@ -29,12 +19,10 @@ void readFile(const char* readFile) {
 					translateOne(infile);
 				}
 			}
-			else { }
+			else {}
 		}
 	}
-
 }
-
 int getType(FILE* file) {
 	unsigned char type; //where byte will go
 	int bytesRead = fread(&type, sizeof(type), 1, file); //reading
