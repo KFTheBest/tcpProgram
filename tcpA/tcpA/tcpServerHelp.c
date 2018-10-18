@@ -9,6 +9,7 @@
 ssize_t Readline(int sockd, void *vptr, size_t maxlen) {
 	ssize_t n, rc;
 	char    c, *buffer;
+
 	buffer = vptr;
 
 	for (n = 1; n < maxlen; n++) {
