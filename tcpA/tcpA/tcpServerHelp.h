@@ -12,16 +12,12 @@
 #include <sys/socket.h>      
 #include <sys/types.h>        
 #include <arpa/inet.h>                 
-#include <string.h>
 #include <stdbool.h>
 #include <error.h>
 #include <errno.h>
 #include <string.h>
 
-struct fileSend {
-	unsigned char* fileID ;
 
-}fileSend;
 
 
 extern int errno;

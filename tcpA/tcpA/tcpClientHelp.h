@@ -16,6 +16,15 @@
 
 extern int errno;
 
+typedef unsigned int uint32;
+struct fileSend {
+	unsigned char* fileID;
+	unsigned char* fileFormat;
+	int fileLength;
+	uint32 fileSize;
+
+}fileSend;
+
 int ParseCmdLine(int argc, char *argv[], char **szAddress, char **szPort);
 ssize_t readData(int fd, void *vptr, size_t maxlen);
 ssize_t writeBack(int fc, const void *vptr, size_t maxlen);
