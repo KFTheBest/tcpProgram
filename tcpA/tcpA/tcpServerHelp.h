@@ -1,7 +1,7 @@
 #ifndef PG_SOCK_HELP
 #define PG_SOCK_HELP
 #define LISTENQ (1024)   
-#define ECHO_PORT (2002)
+#define ECHO_PORT (4444)
 #define MAX_LINE (1000)
 #define DATA_ZERO 0
 #define DATA_ONE 1
@@ -11,12 +11,17 @@
 #include <stdio.h>
 #include <sys/socket.h>      
 #include <sys/types.h>        
-#include <arpa/inet.h>       
-#include <unistd.h>           
+#include <arpa/inet.h>                 
 #include <string.h>
 #include <stdbool.h>
 #include <error.h>
 #include <errno.h>
+#include <string.h>
+
+struct fileSend {
+	unsigned char* fileID ;
+
+}fileSend;
 
 
 extern int errno;

@@ -2,6 +2,7 @@
 #define PG_SOCK_HELP
 #define LISTENQ (1024)
 #define MAX_LINE (1000)
+#define PORT 4444
 
 #include <sys/socket.h>
 #include <sys/types.h>
@@ -9,8 +10,9 @@
 #include <unistd.h>
 #include <errno.h>
 #include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
+#include <netinet/in.h>
 
 extern int errno;
 
